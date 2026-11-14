@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cm8vsxfpqt5jq"]
+
+[ext_resource type="Texture2D" uid="uid://bnae61vdrsuht" path="res://icon.svg" id="1_wmchb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aj8lo"]
+radius = 103.09
+
+[node name="Area2D" type="Area2D" unique_id=396048790 groups=["leaf"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=864631065]
+texture = ExtResource("1_wmchb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1187233589]
+shape = SubResource("CircleShape2D_aj8lo")
