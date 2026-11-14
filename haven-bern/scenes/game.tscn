@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cq86eu7sjjcap"]
 
+[ext_resource type="Texture2D" uid="uid://bs5gr806k8u8l" path="res://world_tileset.png" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://eslbbrlku2w8" path="res://scenes/character.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cm8vsxfpqt5jq" path="res://scenes/leaf.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://cev0n220lfwqq" path="res://images.png" id="3_lnu2h"]
@@ -8,6 +9,11 @@
 radius = 88.45903
 
 [node name="Node2D" type="Node2D" unique_id=1805858301]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=594888409]
+position = Vector2(994, 316)
+scale = Vector2(6.8671875, 4.0390625)
+texture = ExtResource("1_lbhrr")
 
 [node name="basket" type="Area2D" parent="." unique_id=219780384 groups=["basket"]]
 position = Vector2(800, 300)
