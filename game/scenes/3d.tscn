@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b18qe6hcgctwg"]
+
+[ext_resource type="Script" uid="uid://c3ypcg0bjulwf" path="res://scenes/character_body_3d.gd" id="1_7lbti"]
+[ext_resource type="ArrayMesh" uid="uid://dopirfgjdrwnh" path="res://Image/22-trees_9_obj/trees9.obj" id="1_tdm2k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05cw4"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_05cw4"]
+
+[node name="3d" type="Node3D" unique_id=328147445]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1675325409]
+transform = Transform3D(0.5409757, 0.24999997, -0.80302256, 0.087096795, 0.93301266, 0.34914383, 0.8365162, -0.25881907, 0.48296303, -95, 39, 37)
+current = true
+fov = 16.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1893113587]
+script = ExtResource("1_7lbti")
+
+[node name="Trees9" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1376616919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80734295, 0, 0.25029397)
+mesh = ExtResource("1_tdm2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=380725262]
+shape = SubResource("BoxShape3D_05cw4")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=183506796]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2068923496]
+shape = SubResource("WorldBoundaryShape3D_05cw4")
