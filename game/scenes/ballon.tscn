@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://rnptnxa7vafr"]
+
+[ext_resource type="Texture2D" uid="uid://cin6qkxjlphp6" path="res://Image/ballon-mit-schoenen-farben_23-2151865558-Photoroom.png" id="1_cr0o2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05cw4"]
+radius = 113.004425
+
+[node name="ballon" type="StaticBody2D" unique_id=57662681]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1742969648]
+position = Vector2(28, 92)
+texture = ExtResource("1_cr0o2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1869688904]
+position = Vector2(28, -68)
+shape = SubResource("CircleShape2D_05cw4")

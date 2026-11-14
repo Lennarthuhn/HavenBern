@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0508eny7ubfp" path="res://Image/pixel-desert-landscape-8-bit-game-level-background-vector.jpg" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bba7gyr1iwkh" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dx0bnqv4g22u8" path="res://scenes/killzone.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://rnptnxa7vafr" path="res://scenes/ballon.tscn" id="5_iywne"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aj8lo"]
 normal = Vector2(0.052558832, -0.99861777)
@@ -11,8 +12,13 @@ normal = Vector2(0.052558832, -0.99861777)
 [node name="game" type="Node2D" unique_id=1776353817]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1676580454]
-position = Vector2(78, -264)
+position = Vector2(80, -264)
 texture = ExtResource("1_yqjtg")
+
+[node name="background2" type="Sprite2D" parent="." unique_id=2053838253]
+position = Vector2(1496, -264)
+texture = ExtResource("1_yqjtg")
+flip_h = true
 
 [node name="player" parent="." unique_id=609080429 instance=ExtResource("1_uwrxv")]
 position = Vector2(198, -124)
@@ -32,3 +38,6 @@ position = Vector2(186, -40)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzoneground" unique_id=1010998201]
 position = Vector2(-13, 243)
 shape = SubResource("WorldBoundaryShape2D_aj8lo")
+
+[node name="ballon" parent="." unique_id=57662681 instance=ExtResource("5_iywne")]
+position = Vector2(346, 67)
