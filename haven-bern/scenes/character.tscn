@@ -25,4 +25,13 @@ visible = false
 position = Vector2(-11, -6)
 texture = ExtResource("3_lrhn5")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=371638857]
+
+[node name="leafcountdisplay" type="Label" parent="CanvasLayer" unique_id=319884540]
+offset_left = 159.0
+offset_top = 54.0
+offset_right = 235.0
+offset_bottom = 77.0
+text = "leaves = 0"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
