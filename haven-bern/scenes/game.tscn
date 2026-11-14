@@ -1,22 +1,69 @@
 [gd_scene format=3 uid="uid://cq86eu7sjjcap"]
 
+[ext_resource type="Texture2D" uid="uid://b3fr65c5y57vu" path="res://scenes/1000_F_179970625_W9rXJkr5Ia7lidDeNOTQlJ4gkisVn7G9.jpg" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://eslbbrlku2w8" path="res://scenes/character.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cm8vsxfpqt5jq" path="res://scenes/leaf.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://b33hcfv0xgdo6" path="res://pixel-art-basket-image-for-digital-use-vector.jpg" id="3_lnu2h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccjmc"]
+radius = 22.912006
 
 [node name="Node2D" type="Node2D" unique_id=1805858301]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=885505265]
+position = Vector2(578, 307.5)
+scale = Vector2(1.1620002, 1.1291448)
+texture = ExtResource("1_lbhrr")
 
 [node name="character" parent="." unique_id=63646583 instance=ExtResource("1_uwrxv")]
 position = Vector2(687, 310)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="character" unique_id=1925813029]
+
+[node name="leafcount" type="Label" parent="character/CanvasLayer" unique_id=1023170131]
+anchors_preset = -1
+anchor_left = 0.27400002
+anchor_top = 0.035
+anchor_right = 0.27400002
+anchor_bottom = 0.035
+offset_left = -28.64801
+offset_top = -6.6800003
+offset_right = 41.35199
+offset_bottom = 16.32
+text = "Leaf counter"
+metadata/_edit_use_anchors_ = true
+
 [node name="Area2D" parent="." unique_id=396048790 instance=ExtResource("2_yqjtg")]
-position = Vector2(370, 241)
+position = Vector2(314, 160)
 
 [node name="Area2D2" parent="." unique_id=136094851 instance=ExtResource("2_yqjtg")]
-position = Vector2(709, -8)
+position = Vector2(635, 162)
 
 [node name="Area2D3" parent="." unique_id=1192503276 instance=ExtResource("2_yqjtg")]
-position = Vector2(452, 22)
+position = Vector2(1025, 99)
+
+[node name="Area2D4" parent="." unique_id=169093975 instance=ExtResource("2_yqjtg")]
+position = Vector2(861, 379)
+
+[node name="Area2D5" parent="." unique_id=407519404 instance=ExtResource("2_yqjtg")]
+position = Vector2(503, 523)
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=1870416697 groups=["Basquet"]]
+position = Vector2(-54, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D6" unique_id=1083883519]
+position = Vector2(178, 397.99997)
+scale = Vector2(0.19591835, 0.20714283)
+texture = ExtResource("3_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1365673897]
+position = Vector2(167, 415)
+rotation = -0.82728606
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ccjmc")
 
 [connection signal="area_entered" from="Area2D" to="character" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="character" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D3" to="character" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D4" to="character" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D5" to="character" method="_on_area_2d_area_entered"]

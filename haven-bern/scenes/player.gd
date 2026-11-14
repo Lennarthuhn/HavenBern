@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+var leafcount = 0
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -17,3 +17,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("leaf") and not $heldleaf.visible:
 		area.queue_free()
 		$heldleaf.visible = true
+
+	if area.is_in_group("Basquet") and $heldleaf.visible:
+		$heldleaf.visible = false
+		leafcount+=1
+		$CanvasLayer/leafcount.text = "leaves" + str(leafcount)
