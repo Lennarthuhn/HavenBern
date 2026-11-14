@@ -198,20 +198,24 @@ _data = {
 }
 
 [node name="coin" type="Area2D" unique_id=1396010795]
+position = Vector2(0, 1)
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=804488522]
+position = Vector2(-0.9999962, -6.0000076)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_7thih")
 autoplay = "default"
 frame_progress = 0.81512654
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326418593]
+scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_05cw4")
 
 [node name="pickup" type="AudioStreamPlayer2D" parent="." unique_id=2033135842]
 stream = ExtResource("3_11l1o")
-bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1176314927]
 root_node = NodePath("../pickup")

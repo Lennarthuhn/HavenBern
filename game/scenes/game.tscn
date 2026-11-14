@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://1ufwd2ujddjk" path="res://scenes/turtle.tscn" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://hdlsxe8qy80n" path="res://Image/167653-turtle-green-download-hq.png" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bnvqqixax528u" path="res://Image/gruenes-blatt-isoliert-auf-transparentem-oder-weissem-hintergrund-png_888962-523-Photoroom.png" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://cogi2pmas3dew" path="res://scenes/coin.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://51rqumjwvfd6" path="res://scenes/trampolin.tscn" id="11_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://dahyapexpqve8" path="res://Image/rainbowbk.png" id="12_dinhu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aj8lo"]
 normal = Vector2(0.052558832, -0.99861777)
@@ -156,49 +159,57 @@ _data = {
 position = Vector2(80, -264)
 texture = ExtResource("1_yqjtg")
 
+[node name="bk2" type="Sprite2D" parent="." unique_id=2013575890]
+position = Vector2(-960, -2640)
+scale = Vector2(1.1039159, 0.9125512)
+texture = ExtResource("12_dinhu")
+
 [node name="background2" type="Sprite2D" parent="." unique_id=2053838253]
 position = Vector2(1496, -264)
 texture = ExtResource("1_yqjtg")
 flip_h = true
 
-[node name="background3" type="Sprite2D" parent="." unique_id=422286066]
-position = Vector2(1496, -264)
+[node name="background3" type="Sprite2D" parent="." unique_id=351091189]
+position = Vector2(4328, -272)
 texture = ExtResource("1_yqjtg")
 flip_h = true
 
 [node name="background5" type="Sprite2D" parent="." unique_id=1753037319]
-position = Vector2(81, -1242)
+position = Vector2(80, -1240)
 texture = ExtResource("1_yqjtg")
 flip_v = true
 
 [node name="background8" type="Sprite2D" parent="." unique_id=571590045]
-position = Vector2(2899, -1235)
+position = Vector2(2912, -1240)
 texture = ExtResource("1_yqjtg")
 flip_v = true
 
 [node name="background6" type="Sprite2D" parent="." unique_id=327036915]
-position = Vector2(1481, -1242)
+position = Vector2(1496, -1240)
 texture = ExtResource("1_yqjtg")
 flip_h = true
 flip_v = true
 
-[node name="background7" type="Sprite2D" parent="." unique_id=1605952790]
-position = Vector2(1481, -1242)
+[node name="background7" type="Sprite2D" parent="." unique_id=1578051980]
+position = Vector2(4328, -1240)
 texture = ExtResource("1_yqjtg")
 flip_h = true
 flip_v = true
 
 [node name="background4" type="Sprite2D" parent="." unique_id=1194515260]
-position = Vector2(2907, -263)
+position = Vector2(2912, -264)
 texture = ExtResource("1_yqjtg")
 
 [node name="player" parent="." unique_id=609080429 instance=ExtResource("1_uwrxv")]
-position = Vector2(198, -124)
+position = Vector2(3328, -512)
+collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1746741535]
-limit_left = -632
-limit_right = 10000003
-limit_bottom = 223
+position = Vector2(34, -12)
+limit_left = -6572
+limit_top = -10000014
+limit_right = 9999823
+limit_bottom = 209
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
 
@@ -207,6 +218,21 @@ position = Vector2(186, -40)
 
 [node name="platform2" parent="." unique_id=539608624 instance=ExtResource("3_lnu2h")]
 position = Vector2(586, -430)
+
+[node name="platform20" parent="." unique_id=980760940 instance=ExtResource("3_lnu2h")]
+position = Vector2(-160, -2432)
+
+[node name="platform21" parent="." unique_id=1815689193 instance=ExtResource("3_lnu2h")]
+position = Vector2(-416, -2560)
+
+[node name="platform23" parent="." unique_id=587491248 instance=ExtResource("3_lnu2h")]
+position = Vector2(-328, -2520)
+
+[node name="platform24" parent="." unique_id=1036946381 instance=ExtResource("3_lnu2h")]
+position = Vector2(-488, -2560)
+
+[node name="platform22" parent="." unique_id=2127931595 instance=ExtResource("3_lnu2h")]
+position = Vector2(-256, -2464)
 
 [node name="platform3" parent="." unique_id=192619216 instance=ExtResource("3_lnu2h")]
 position = Vector2(660, -434)
@@ -219,6 +245,30 @@ position = Vector2(1365, 43)
 
 [node name="platform9" parent="." unique_id=1097764832 instance=ExtResource("3_lnu2h")]
 position = Vector2(2237, 27)
+
+[node name="platform12" parent="." unique_id=277380511 instance=ExtResource("3_lnu2h")]
+position = Vector2(2578, 28)
+
+[node name="platform13" parent="." unique_id=2016599420 instance=ExtResource("3_lnu2h")]
+position = Vector2(2750, -70)
+
+[node name="platform14" parent="." unique_id=1443101510 instance=ExtResource("3_lnu2h")]
+position = Vector2(2892, -176)
+
+[node name="platform15" parent="." unique_id=1349350285 instance=ExtResource("3_lnu2h")]
+position = Vector2(3019, -247)
+
+[node name="platform16" parent="." unique_id=1209138696 instance=ExtResource("3_lnu2h")]
+position = Vector2(3176, -344)
+
+[node name="platform17" parent="." unique_id=1164150579 instance=ExtResource("3_lnu2h")]
+position = Vector2(3312, -440)
+
+[node name="platform18" parent="." unique_id=582676223 instance=ExtResource("3_lnu2h")]
+position = Vector2(3752, -752)
+
+[node name="platform19" parent="." unique_id=1918643678 instance=ExtResource("3_lnu2h")]
+position = Vector2(3824, -744)
 
 [node name="platform10" parent="." unique_id=1564841937 instance=ExtResource("3_lnu2h")]
 position = Vector2(2304, 31)
@@ -286,3 +336,21 @@ texture = ExtResource("8_gee14")
 position = Vector2(2089, 25)
 scale = Vector2(0.48722044, 0.30042464)
 texture = ExtResource("8_gee14")
+
+[node name="coin" parent="." unique_id=1396010795 instance=ExtResource("10_vtaks")]
+position = Vector2(175.99998, -317)
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="trampolin" parent="." unique_id=1035663360 instance=ExtResource("11_kvpfn")]
+position = Vector2(3456.0002, -520)
+rotation = -0.9424778
+
+[node name="Label" type="Label" parent="." unique_id=162630361]
+offset_left = 3104.0
+offset_top = -752.0
+offset_right = 3511.0
+offset_bottom = -696.0
+theme_override_colors/font_color = Color(0, 1.973306, 2.3895879, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 30
+text = "Bounce Back to Level 2!!!! (-; "
