@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bdprv8jl1h28v" path="res://Image/wood1.png" id="1_ba0x2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_05cw4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba0x2"]
 size = Vector2(70.25, 20)
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=1345592544]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=883608784]
-position = Vector2(99.875, -70)
-shape = SubResource("RectangleShape2D_05cw4")
+[node name="platform" type="StaticBody2D" unique_id=1345592544]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=21937841]
-position = Vector2(95, -72)
+position = Vector2(1, -10)
 texture = ExtResource("1_ba0x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=433917190]
+position = Vector2(4, -9)
+shape = SubResource("RectangleShape2D_ba0x2")
