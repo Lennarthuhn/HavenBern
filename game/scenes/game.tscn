@@ -217,6 +217,15 @@ position = Vector2(1290, 43)
 [node name="platform7" parent="." unique_id=2062278683 instance=ExtResource("3_lnu2h")]
 position = Vector2(1365, 43)
 
+[node name="platform9" parent="." unique_id=1097764832 instance=ExtResource("3_lnu2h")]
+position = Vector2(2237, 27)
+
+[node name="platform10" parent="." unique_id=1564841937 instance=ExtResource("3_lnu2h")]
+position = Vector2(2304, 31)
+
+[node name="platform11" parent="." unique_id=1023070598 instance=ExtResource("3_lnu2h")]
+position = Vector2(2373, 31)
+
 [node name="platform8" parent="." unique_id=961766513 instance=ExtResource("3_lnu2h")]
 position = Vector2(1440, 40)
 
