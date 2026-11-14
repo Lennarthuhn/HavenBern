@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cmlsljmi8g56f"]
+
+[ext_resource type="Script" uid="uid://bqavnys0gf5wn" path="res://scenes/rainbowtrampolin.gd" id="1_vkqt6"]
+[ext_resource type="Texture2D" uid="uid://dtpffynp2k05a" path="res://Image/rainbow.png" id="2_src7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5newe"]
+radius = 72.0
+
+[node name="rainbowtrampolin" type="Area2D" unique_id=1035663360]
+script = ExtResource("1_vkqt6")
+
+[node name="132588Trampoline" type="Sprite2D" parent="." unique_id=967181778]
+position = Vector2(-8, -48)
+scale = Vector2(0.41330498, 0.41330492)
+texture = ExtResource("2_src7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2002052895]
+position = Vector2(-8, -24)
+shape = SubResource("CircleShape2D_5newe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

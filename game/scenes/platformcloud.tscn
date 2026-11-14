@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dw5d2hmcctwrs"]
+
+[ext_resource type="Texture2D" uid="uid://wm2b0bxok0vv" path="res://Image/Cloud-21.png" id="1_724sm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05cw4"]
+radius = 15.205384
+height = 110.893265
+
+[node name="platformcloud" type="StaticBody2D" unique_id=1345592544]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21937841]
+position = Vector2(7.999996, -16)
+scale = Vector2(0.5517621, 0.39285716)
+texture = ExtResource("1_724sm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=433917190]
+position = Vector2(8, -8)
+rotation = -1.5760323
+shape = SubResource("CapsuleShape2D_05cw4")

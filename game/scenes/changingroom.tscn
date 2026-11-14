@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://iu8he168q7y4"]
+
+[ext_resource type="Script" uid="uid://ca5jl8nn4vevo" path="res://scenes/changingroom.gd" id="1_5tpuf"]
+[ext_resource type="Texture2D" uid="uid://d7j1xm6tsa6a" path="res://Image/changingroom.jpeg" id="1_12mdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj8lo"]
+size = Vector2(20, 178)
+
+[node name="changingroom" type="Area2D" unique_id=402312534]
+script = ExtResource("1_5tpuf")
+
+[node name="Changingroom" type="Sprite2D" parent="." unique_id=1698777190]
+position = Vector2(60.125, -88)
+scale = Vector2(0.2678971, 0.39261746)
+texture = ExtResource("1_12mdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=333511231]
+position = Vector2(56, -88)
+shape = SubResource("RectangleShape2D_aj8lo")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

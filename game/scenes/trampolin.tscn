@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://51rqumjwvfd6"]
+
+[ext_resource type="Script" uid="uid://jgvp1iwttlcc" path="res://trampolin.gd" id="1_nuehd"]
+[ext_resource type="Texture2D" uid="uid://4bcyqkr430lm" path="res://Image/132588-trampoline.png" id="2_bo85v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05cw4"]
+size = Vector2(170, 50)
+
+[node name="trampolin20deg" type="Area2D" unique_id=1035663360]
+script = ExtResource("1_nuehd")
+
+[node name="132588Trampoline" type="Sprite2D" parent="." unique_id=967181778]
+position = Vector2(1.5258789e-05, 1.5258789e-05)
+scale = Vector2(0.11721998, 0.117219955)
+texture = ExtResource("2_bo85v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2002052895]
+shape = SubResource("RectangleShape2D_05cw4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
