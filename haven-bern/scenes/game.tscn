@@ -1,15 +1,32 @@
 [gd_scene format=3 uid="uid://cq86eu7sjjcap"]
 
 [ext_resource type="PackedScene" uid="uid://eslbbrlku2w8" path="res://scenes/character.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://bnae61vdrsuht" path="res://icon.svg" id="2_yqjtg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05cw4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_05cw4"]
 
 [node name="Node2D" type="Node2D" unique_id=1805858301]
-position = Vector2(5, 9)
+position = Vector2(244, 58)
 
 [node name="character" parent="." unique_id=63646583 instance=ExtResource("1_uwrxv")]
 position = Vector2(106, -41)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=472725465]
-position = Vector2(13, 35)
+[node name="Area2D" type="Area2D" parent="." unique_id=2107198898]
+position = Vector2(96, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=756528883]
+position = Vector2(-327, -72)
+shape = SubResource("CircleShape2D_05cw4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1526403718]
+position = Vector2(-292, -63)
+texture = ExtResource("2_yqjtg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=472725465]
+position = Vector2(189, 33)
 shape = SubResource("WorldBoundaryShape2D_05cw4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=710320112]
+position = Vector2(83, -4)

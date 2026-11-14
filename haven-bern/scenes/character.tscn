@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bykc8wonlmnfh" path="res://scenes/player.gd" id="1_rkhd4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_05cw4"]
+radius = 93.78
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_05cw4"]
+distance = -108.0
 
 [node name="character" type="Node2D" unique_id=63646583]
 
@@ -13,5 +17,8 @@ script = ExtResource("1_rkhd4")
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1153897994]
 texture = ExtResource("1_agfs1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885451382]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=885451382]
 shape = SubResource("CircleShape2D_05cw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=377540747]
+shape = SubResource("WorldBoundaryShape2D_05cw4")
