@@ -14,5 +14,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("leaf"):
+	if area.is_in_group("leaf") and not $heldleaf.visible:
 		area.queue_free()
+		$heldleaf.visible = true

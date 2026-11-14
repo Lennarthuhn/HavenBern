@@ -9,6 +9,14 @@
 position = Vector2(687, 310)
 
 [node name="Area2D" parent="." unique_id=396048790 instance=ExtResource("2_yqjtg")]
-position = Vector2(289, 241)
+position = Vector2(370, 241)
+
+[node name="Area2D2" parent="." unique_id=136094851 instance=ExtResource("2_yqjtg")]
+position = Vector2(709, -8)
+
+[node name="Area2D3" parent="." unique_id=1192503276 instance=ExtResource("2_yqjtg")]
+position = Vector2(452, 22)
 
 [connection signal="area_entered" from="Area2D" to="character" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D2" to="character" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D3" to="character" method="_on_area_2d_area_entered"]
