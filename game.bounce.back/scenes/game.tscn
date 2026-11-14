@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dlgmtcau57j4d"]
+
+[ext_resource type="PackedScene" uid="uid://casgcs7q8ujxx" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://d0508eny7ubfp" path="res://Image/pixel-desert-landscape-8-bit-game-level-background-vector.jpg" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bba7gyr1iwkh" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://bpfjgguk3qyua" path="res://Image/wood3.png" id="4_lbhrr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aj8lo"]
+normal = Vector2(0.052558832, -0.99861777)
+
+[node name="game" type="Node2D" unique_id=1776353817]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1676580454]
+texture_repeat = 2
+position = Vector2(78, -264)
+texture = ExtResource("1_yqjtg")
+region_enabled = true
+region_rect = Rect2(1392.3055, 7.756592, 1416, 980)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=599905375]
+position = Vector2(78, -264)
+
+[node name="CharacterBody2D" parent="." unique_id=609080429 instance=ExtResource("1_uwrxv")]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D" unique_id=1851339724]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1746741535]
+position_smoothing_enabled = true
+position_smoothing_speed = 30.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=767320620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1010998201]
+position = Vector2(-13, 243)
+shape = SubResource("WorldBoundaryShape2D_aj8lo")
+
+[node name="StaticBody2D2" parent="." unique_id=1345592544 instance=ExtResource("3_lnu2h")]
+position = Vector2(191, -62)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2056786921]
+
+[node name="Wood3" type="Sprite2D" parent="." unique_id=537294046]
+position = Vector2(-160.99998, -287.99997)
+rotation = 3.307399
+texture = ExtResource("4_lbhrr")

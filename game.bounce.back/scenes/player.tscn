@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://casgcs7q8ujxx"]
+
+[ext_resource type="Script" uid="uid://khx1q10ks7x3" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dmn6a3q8kojjc" path="res://scenes/pngtree-green-slime-blob-monster-with-big-yellow-eyes-smiling-png-image_17409114-Photoroom.png" id="2_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aj8lo"]
+radius = 24.5153
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=609080429]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=633670786]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_aj8lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099263226]
+position = Vector2(-5, -17.000008)
+scale = Vector2(0.2265625, 0.2140625)
+texture = ExtResource("2_g2els")
