@@ -1,4 +1,4 @@
-#*BoncyPlatform* 
+#BoncyPlatform
 
 The Godot game is in the folder "game"
 
@@ -6,7 +6,7 @@ it's a 3 level 2/3d Platformer. the characters are realy bouncy objects such as 
 
 the mission is to contiune and jump up and up.
 
-##*controls*
+##controls
 a , arrow-left:  move left
 d , arrow-right: move right
 w,  arrow-up: move forward
