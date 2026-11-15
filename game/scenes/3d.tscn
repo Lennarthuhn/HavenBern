@@ -1,30 +1,65 @@
 [gd_scene format=3 uid="uid://b18qe6hcgctwg"]
 
 [ext_resource type="Script" uid="uid://c3ypcg0bjulwf" path="res://scenes/character_body_3d.gd" id="1_7lbti"]
-[ext_resource type="ArrayMesh" uid="uid://dopirfgjdrwnh" path="res://Image/22-trees_9_obj/trees9.obj" id="1_tdm2k"]
+[ext_resource type="Script" uid="uid://bravpt4xk7n5d" path="res://scenes/killzone3d.gd" id="2_7lbti"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_05cw4"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_05cw4"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_05cw4"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aj8lo"]
 
-[node name="3d" type="Node3D" unique_id=328147445]
+[node name="3D" type="Node3D" unique_id=328147445]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1675325409]
-transform = Transform3D(0.5409757, 0.24999997, -0.80302256, 0.087096795, 0.93301266, 0.34914383, 0.8365162, -0.25881907, 0.48296303, -95, 39, 37)
-current = true
-fov = 16.0
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1603629611]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1893113587]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=484040458]
 script = ExtResource("1_7lbti")
 
-[node name="Trees9" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1376616919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80734295, 0, 0.25029397)
-mesh = ExtResource("1_tdm2k")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1741788010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_05cw4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=380725262]
-shape = SubResource("BoxShape3D_05cw4")
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1675325409]
+transform = Transform3D(0.9976368, -0.056734364, -0.03875701, 0.066863716, 0.931492, 0.35756382, 0.015815735, -0.35931024, 0.93308413, 1.3128958, 5.2787714, 5.9247804)
+current = true
+fov = 52.9
+near = 0.1
 
-[node name="Area3D" type="Area3D" parent="." unique_id=183506796]
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CharacterBody3D" unique_id=1725000735]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 2, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2068923496]
-shape = SubResource("WorldBoundaryShape3D_05cw4")
+[node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=962480640]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1899165965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_05cw4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=748377210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1555401583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.721632, 0, -2)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1556142367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.721632, 0, -8.615581)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=3108010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.581302, 0, -8.615581)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="killzone" type="Area3D" parent="." unique_id=1149449011]
+script = ExtResource("2_7lbti")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="killzone" unique_id=1032673059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("WorldBoundaryShape3D_aj8lo")
+
+[connection signal="body_entered" from="killzone" to="CharacterBody3D" method="_on_killzone_body_entered"]

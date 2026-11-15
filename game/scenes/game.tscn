@@ -946,7 +946,7 @@ scale = Vector2(0.32476676, 0.32476673)
 texture = ExtResource("19_5newe")
 
 [node name="player" parent="." unique_id=609080429 instance=ExtResource("1_uwrxv")]
-position = Vector2(-2600, -4504)
+position = Vector2(-2400, -4560)
 collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1746741535]
