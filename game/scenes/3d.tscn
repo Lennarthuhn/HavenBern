@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bl7ubghtk854l" path="res://scenes/node_3d.gd" id="2_jauas"]
 [ext_resource type="Material" uid="uid://dnumns5w7ucue" path="res://Image/maujoe.basic_water_material/materials/basic_water_material.material" id="2_yhftu"]
 [ext_resource type="Texture2D" uid="uid://4qpda0uqf8k6" path="res://Image/sky.jpg" id="3_ix6ec"]
+[ext_resource type="PackedScene" uid="uid://dqxoi1u04gnos" path="res://Image/Donut/Donut.fbx" id="3_jauas"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_05cw4"]
 
@@ -124,14 +125,14 @@ current = true
 fov = 80.06294
 near = 0.1
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="CharacterBody3D" unique_id=1725000735]
-transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 2, 0)
-
 [node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=962480640]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1899165965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_05cw4")
+
+[node name="Donut" parent="CharacterBody3D" unique_id=1088737653 instance=ExtResource("3_jauas")]
+transform = Transform3D(3.821371e-14, -8.742276e-07, -20, -20, -8.742276e-07, 0, -8.742278e-07, 19.999996, -8.742278e-07, 0.06933284, 1.9880657, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=748377210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2)
