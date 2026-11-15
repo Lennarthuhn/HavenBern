@@ -12,6 +12,6 @@ d , arrow-right: move right
 w,  arrow-up: move forward
 s, arrow-down: move back
 
-itch.io
+(itch.io)[https://lennart-huhn.itch.io/boncyplatform]
 
 
