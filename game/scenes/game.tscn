@@ -796,32 +796,32 @@ scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin13" parent="." unique_id=1252280498 instance=ExtResource("10_vtaks")]
 position = Vector2(3040, -608)
-rotation = -1.1623994
+rotation = 0.027104238
 scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin14" parent="." unique_id=492415443 instance=ExtResource("10_vtaks")]
-position = Vector2(-319.99976, -2608)
-rotation = -1.1623994
+position = Vector2(-309.00003, -2604.9998)
+rotation = -1.6554444
 scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin15" parent="." unique_id=1730986293 instance=ExtResource("10_vtaks")]
-position = Vector2(-752, -2472)
-rotation = -1.1623994
+position = Vector2(-759.0001, -2461)
+rotation = 0.13961501
 scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin16" parent="." unique_id=627597238 instance=ExtResource("10_vtaks")]
-position = Vector2(-2944, -2448)
-rotation = -1.1623994
+position = Vector2(-2928.0002, -2441)
+rotation = -1.6280549
 scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin19" parent="." unique_id=755805580 instance=ExtResource("10_vtaks")]
 position = Vector2(-3192.0002, -2440)
-rotation = -1.1623994
+rotation = -1.4886127
 scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin20" parent="." unique_id=955279770 instance=ExtResource("10_vtaks")]
 position = Vector2(-2560, -4504)
-rotation = -1.1623994
+rotation = -0.16123927
 scale = Vector2(0.48722044, 0.30042464)
 
 [node name="coin17" parent="." unique_id=1418971642 instance=ExtResource("10_vtaks")]
