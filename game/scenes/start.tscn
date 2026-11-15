@@ -52,21 +52,22 @@ texture = ExtResource("1_8itgj")
 position = Vector2(24, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1663201849]
-position = Vector2(595, 333)
+position = Vector2(544, 224)
 shape = SubResource("RectangleShape2D_05cw4")
 
 [node name="Label" type="Label" parent="Area2D" unique_id=1182919880]
-offset_left = 520.0
-offset_top = 280.0
-offset_right = 667.0
-offset_bottom = 368.0
+offset_left = 480.0
+offset_top = 168.0
+offset_right = 627.0
+offset_bottom = 256.0
 theme_override_font_sizes/font_size = 64
 text = "start"
 
 [node name="Label2" type="Label" parent="Area2D" unique_id=1441094058]
-offset_left = 256.0
-offset_right = 1025.0
-offset_bottom = 88.0
+offset_left = 8.0
+offset_top = 560.0
+offset_right = 777.0
+offset_bottom = 648.0
 theme_override_font_sizes/font_size = 32
 text = "Move daven over start"
 
