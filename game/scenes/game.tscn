@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dlgmtcau57j4d"]
 
+[ext_resource type="Script" uid="uid://d0grfq5phg1mi" path="res://scenes/gamemanager.gd" id="1_37s47"]
 [ext_resource type="PackedScene" uid="uid://casgcs7q8ujxx" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://d0508eny7ubfp" path="res://Image/pixel-desert-landscape-8-bit-game-level-background-vector.jpg" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://b26tfgjwx7puj" path="res://Image/sky.png" id="2_1kice"]
@@ -499,6 +500,10 @@ size = Vector2(1225.0002, 146.40088)
 
 [node name="game" type="Node2D" unique_id=1776353817]
 
+[node name="gamemanager" type="Node" parent="." unique_id=1440809827]
+unique_name_in_owner = true
+script = ExtResource("1_37s47")
+
 [node name="bk2" type="Sprite2D" parent="." unique_id=2013575890]
 position = Vector2(-960, -2640)
 scale = Vector2(1.1039159, 0.9125512)
@@ -743,6 +748,97 @@ texture = ExtResource("8_gee14")
 position = Vector2(175.99998, -317)
 scale = Vector2(0.48722044, 0.30042464)
 
+[node name="coin2" parent="." unique_id=1349107904 instance=ExtResource("10_vtaks")]
+position = Vector2(1624, -88)
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin3" parent="." unique_id=1588941592 instance=ExtResource("10_vtaks")]
+position = Vector2(1703.9999, -88)
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin4" parent="." unique_id=1640161681 instance=ExtResource("10_vtaks")]
+position = Vector2(1776, -88)
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin5" parent="." unique_id=1743730950 instance=ExtResource("10_vtaks")]
+position = Vector2(1840, -88)
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin6" parent="." unique_id=320067850 instance=ExtResource("10_vtaks")]
+position = Vector2(1920.0001, -88.00001)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin7" parent="." unique_id=727113948 instance=ExtResource("10_vtaks")]
+position = Vector2(1984.0001, -88)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin8" parent="." unique_id=534597000 instance=ExtResource("10_vtaks")]
+position = Vector2(2056, -88)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin10" parent="." unique_id=643927927 instance=ExtResource("10_vtaks")]
+position = Vector2(736.00024, -528)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin11" parent="." unique_id=1442403192 instance=ExtResource("10_vtaks")]
+position = Vector2(3288, -512)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin12" parent="." unique_id=1155938195 instance=ExtResource("10_vtaks")]
+position = Vector2(3168.0002, -496)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin13" parent="." unique_id=1252280498 instance=ExtResource("10_vtaks")]
+position = Vector2(3040, -608)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin14" parent="." unique_id=492415443 instance=ExtResource("10_vtaks")]
+position = Vector2(-319.99976, -2608)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin15" parent="." unique_id=1730986293 instance=ExtResource("10_vtaks")]
+position = Vector2(-752, -2472)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin16" parent="." unique_id=627597238 instance=ExtResource("10_vtaks")]
+position = Vector2(-2944, -2448)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin19" parent="." unique_id=755805580 instance=ExtResource("10_vtaks")]
+position = Vector2(-3192.0002, -2440)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin20" parent="." unique_id=955279770 instance=ExtResource("10_vtaks")]
+position = Vector2(-2560, -4504)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin17" parent="." unique_id=1418971642 instance=ExtResource("10_vtaks")]
+position = Vector2(-3096.0002, -2440)
+rotation = -1.1623994
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin18" parent="." unique_id=1116222063 instance=ExtResource("10_vtaks")]
+position = Vector2(-3096.0002, -2440)
+rotation = -2.8995044
+scale = Vector2(0.48722044, 0.30042464)
+
+[node name="coin9" parent="." unique_id=1417049394 instance=ExtResource("10_vtaks")]
+position = Vector2(344.00024, -536)
+rotation = 0.012132995
+scale = Vector2(0.48722044, 0.30042464)
+
 [node name="trampolin" parent="." unique_id=1035663360 instance=ExtResource("11_kvpfn")]
 position = Vector2(3423.9998, -400)
 rotation = -0.9424778
@@ -775,7 +871,7 @@ offset_bottom = -4616.0
 theme_override_colors/font_color = Color(2.389845, 0, 1.7809626, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 30
-text = "3 stands for 3d (: "
+text = "The 3 stands for 3d (: "
 
 [node name="changingroom" parent="." unique_id=402312534 instance=ExtResource("13_kvuet")]
 z_index = 6
@@ -946,7 +1042,7 @@ scale = Vector2(0.32476676, 0.32476673)
 texture = ExtResource("19_5newe")
 
 [node name="player" parent="." unique_id=609080429 instance=ExtResource("1_uwrxv")]
-position = Vector2(-2400, -4560)
+position = Vector2(-2624, -4480)
 collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1746741535]
@@ -957,6 +1053,13 @@ limit_right = 9999823
 limit_bottom = 209
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
+
+[node name="score_label" type="Label" parent="player" unique_id=764564575]
+offset_left = 392.0
+offset_top = -328.0
+offset_right = 505.0
+offset_bottom = -305.0
+text = "score = 0 coins"
 
 [node name="3dPortal" type="Area2D" parent="." unique_id=2133939272]
 position = Vector2(-2392, -4376)

@@ -2,10 +2,64 @@
 
 [ext_resource type="Script" uid="uid://c3ypcg0bjulwf" path="res://scenes/character_body_3d.gd" id="1_7lbti"]
 [ext_resource type="Script" uid="uid://bravpt4xk7n5d" path="res://scenes/killzone3d.gd" id="2_7lbti"]
+[ext_resource type="Material" uid="uid://dnumns5w7ucue" path="res://Image/maujoe.basic_water_material/materials/basic_water_material.material" id="2_yhftu"]
+[ext_resource type="Texture2D" uid="uid://dahyapexpqve8" path="res://Image/rainbowbk.png" id="4_yhftu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_05cw4"]
 
+[sub_resource type="Animation" id="Animation_7lbti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(27.20838, 0, -21.546618)]
+}
+
+[sub_resource type="Animation" id="Animation_ix6ec"]
+resource_name = "move up"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(27.20838, 0, -21.546618), Vector3(27.20838, 13, -21.546618)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhftu"]
+_data = {
+&"RESET": SubResource("Animation_7lbti"),
+&"move up": SubResource("Animation_ix6ec")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6saly"]
+size = Vector3(50, 1, 50)
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aj8lo"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6saly"]
+panorama = ExtResource("4_yhftu")
+filter = false
+
+[sub_resource type="Sky" id="Sky_aj8lo"]
+sky_material = SubResource("PanoramaSkyMaterial_6saly")
+
+[sub_resource type="Environment" id="Environment_05cw4"]
+background_mode = 2
+sky = SubResource("Sky_aj8lo")
+sky_rotation = Vector3(0, 2.284636, 0)
 
 [node name="3D" type="Node3D" unique_id=328147445]
 
@@ -51,15 +105,57 @@ use_collision = true
 size = Vector3(4, 1, 5)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=3108010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.201576, 0, -15.359425)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=802099325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.581302, 0, -8.615581)
 use_collision = true
 size = Vector3(4, 1, 5)
 
+[node name="d" type="CSGBox3D" parent="." unique_id=1154629592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.93095, 13.080998, -21.546618)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="d2" type="CSGBox3D" parent="." unique_id=1186753880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.93095, -0.2153635, -21.546618)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1056948770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.20838, 0, -21.546618)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CSGBox3D7" unique_id=1576572975]
+libraries/ = SubResource("AnimationLibrary_yhftu")
+autoplay = &"move up"
+
+[node name="bouncyground" type="Area3D" parent="." unique_id=1921785451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.55162, 0)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="bouncyground" unique_id=177109014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.997658, 10.539293, -16.893696)
+use_collision = true
+size = Vector3(53.01111, 1, 48.62494)
+material = ExtResource("2_yhftu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bouncyground" unique_id=471528361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 11, -16.5)
+shape = SubResource("BoxShape3D_6saly")
+
 [node name="killzone" type="Area3D" parent="." unique_id=1149449011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.55162, 0)
 script = ExtResource("2_7lbti")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="killzone" unique_id=1032673059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("WorldBoundaryShape3D_aj8lo")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=554679884]
+environment = SubResource("Environment_05cw4")
+
+[connection signal="area_exited" from="bouncyground" to="CharacterBody3D" method="_on_bouncyground_area_exited"]
 [connection signal="body_entered" from="killzone" to="CharacterBody3D" method="_on_killzone_body_entered"]

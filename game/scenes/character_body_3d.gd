@@ -31,3 +31,9 @@ func _physics_process(delta: float) -> void:
 func _on_killzone_body_entered(body: Node3D) -> void:
 	print("entered")
 	get_tree().reload_current_scene()
+	
+
+
+
+func _on_bouncyground_area_exited(area: Area3D) -> void:
+	velocity.y = 20

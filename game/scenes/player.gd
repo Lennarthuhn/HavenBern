@@ -31,3 +31,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
+	
+
+
+
+func _on_killzoneground_body_entered(body: Node2D) -> void:
+	velocity.y = -1000
