@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://dnumns5w7ucue" path="res://Image/maujoe.basic_water_material/materials/basic_water_material.material" id="2_yhftu"]
 [ext_resource type="Texture2D" uid="uid://4qpda0uqf8k6" path="res://Image/sky.jpg" id="3_ix6ec"]
 [ext_resource type="PackedScene" uid="uid://dqxoi1u04gnos" path="res://Image/Donut/Donut.fbx" id="3_jauas"]
+[ext_resource type="ArrayMesh" uid="uid://dlkht4xtpvrp7" path="res://Image/tramp.obj" id="7_rtr0i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_05cw4"]
 
@@ -101,6 +102,9 @@ background_mode = 2
 sky = SubResource("Sky_aj8lo")
 sky_rotation = Vector3(0, 2.5132742, 0)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_05cw4"]
+size = Vector3(28, 0.001, 27)
+
 [node name="3D" type="Node3D" unique_id=328147445]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1603629611]
@@ -108,7 +112,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=484040458]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.144264, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85654354, 0)
 script = ExtResource("1_7lbti")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1741788010]
@@ -226,6 +230,17 @@ shape = SubResource("WorldBoundaryShape3D_aj8lo")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=554679884]
 environment = SubResource("Environment_05cw4")
 
+[node name="Area3D" type="Area3D" parent="." unique_id=1064361470]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.229895, 16.11086, -22.765667)
+
+[node name="Tramp" type="MeshInstance3D" parent="Area3D" unique_id=1947374630]
+mesh = ExtResource("7_rtr0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1668554585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4999962, -0.49949646, 0)
+shape = SubResource("BoxShape3D_05cw4")
+
 [connection signal="area_entered" from="bouncyground" to="CharacterBody3D" method="_on_bouncyground_area_entered"]
 [connection signal="area_exited" from="bouncyground" to="CharacterBody3D" method="_on_bouncyground_area_exited"]
 [connection signal="body_entered" from="killzone" to="CharacterBody3D" method="_on_killzone_body_entered"]
+[connection signal="area_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]

@@ -57,3 +57,11 @@ func _input(event: InputEvent) -> void:
 func _on_bouncyground_area_entered(area: Area3D) -> void:
 	print(velocity.y)
 	velocity.y = [-velocity.y, 12 ].max()
+	
+
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	velocity.y = 100
+	await get_tree().create_timer(5.0).timeout
+	get_tree().change_scene_to_file("res://scenes/end.tscn")
