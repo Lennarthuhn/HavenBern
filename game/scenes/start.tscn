@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://637t42awmn47"]
+
+[ext_resource type="Script" uid="uid://btweib6imoxml" path="res://scenes/character_body_2d.gd" id="1_4ge6i"]
+[ext_resource type="Texture2D" uid="uid://dwr62jjv6vajv" path="res://Image/Pastedimage.png" id="1_8itgj"]
+[ext_resource type="Texture2D" uid="uid://5t53golrwwyi" path="res://Image/frame_0_delay-0.2s.png" id="2_8itgj"]
+[ext_resource type="Texture2D" uid="uid://cwmnv8ulbfegl" path="res://Image/frame_1_delay-0.2s.png" id="3_tn317"]
+[ext_resource type="Texture2D" uid="uid://c61w22i6oonxr" path="res://Image/frame_2_delay-0.2s.png" id="4_m8nf6"]
+[ext_resource type="Texture2D" uid="uid://c1ipf1ime88ko" path="res://Image/frame_3_delay-0.2s.png" id="5_pgjjs"]
+[ext_resource type="Texture2D" uid="uid://dlrcnisjcfc4e" path="res://Image/frame_4_delay-0.2s.png" id="6_1nvso"]
+[ext_resource type="Texture2D" uid="uid://0uqpsubcd0ij" path="res://Image/frame_5_delay-0.2s.png" id="7_gsp51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05cw4"]
+size = Vector2(122, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8uic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8itgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tn317")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m8nf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pgjjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1nvso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gsp51")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05cw4"]
+radius = 48.0
+
+[node name="start" type="Node2D" unique_id=56639188]
+
+[node name="Pastedimage" type="Sprite2D" parent="." unique_id=1674438134]
+position = Vector2(572, 320.00006)
+scale = Vector2(0.5989529, 0.5998126)
+texture = ExtResource("1_8itgj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=326542998]
+position = Vector2(24, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1663201849]
+position = Vector2(595, 333)
+shape = SubResource("RectangleShape2D_05cw4")
+
+[node name="Label" type="Label" parent="Area2D" unique_id=1182919880]
+offset_left = 520.0
+offset_top = 280.0
+offset_right = 667.0
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 64
+text = "start"
+
+[node name="Label2" type="Label" parent="Area2D" unique_id=1441094058]
+offset_left = 256.0
+offset_right = 1025.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 32
+text = "Move daven over start"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=731693915]
+position = Vector2(504, 136)
+script = ExtResource("1_4ge6i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1686814668]
+position = Vector2(487.99994, 112.00003)
+rotation = -0.34017593
+sprite_frames = SubResource("SpriteFrames_r8uic")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=85917448]
+position = Vector2(488, 120)
+shape = SubResource("CircleShape2D_05cw4")
+
+[connection signal="area_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]

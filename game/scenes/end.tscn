@@ -4,7 +4,39 @@
 [ext_resource type="Script" uid="uid://btweib6imoxml" path="res://scenes/character_body_2d.gd" id="2_8hmjt"]
 [ext_resource type="Texture2D" uid="uid://dyqpfofgtcjja" path="res://Image/pngtree-green-slime-blob-monster-with-big-yellow-eyes-smiling-png-image_17409114-Photoroom.png" id="2_s4tl2"]
 [ext_resource type="Texture2D" uid="uid://cvp1sqijsbwwi" path="res://Image/dounut.jpeg" id="3_8hmjt"]
+[ext_resource type="Texture2D" uid="uid://5t53golrwwyi" path="res://Image/frame_0_delay-0.2s.png" id="3_oc5t2"]
+[ext_resource type="Texture2D" uid="uid://cwmnv8ulbfegl" path="res://Image/frame_1_delay-0.2s.png" id="4_njoby"]
 [ext_resource type="Texture2D" uid="uid://cjbhu1iekln7j" path="res://Image/Kitty.webp" id="4_o5lv4"]
+[ext_resource type="Texture2D" uid="uid://c61w22i6oonxr" path="res://Image/frame_2_delay-0.2s.png" id="5_sf0ys"]
+[ext_resource type="Texture2D" uid="uid://c1ipf1ime88ko" path="res://Image/frame_3_delay-0.2s.png" id="6_stj65"]
+[ext_resource type="Texture2D" uid="uid://dlrcnisjcfc4e" path="res://Image/frame_4_delay-0.2s.png" id="7_8cwnd"]
+[ext_resource type="Texture2D" uid="uid://0uqpsubcd0ij" path="res://Image/frame_5_delay-0.2s.png" id="8_liw33"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05cw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oc5t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_njoby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sf0ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_stj65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8cwnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_liw33")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="end" type="Node2D" unique_id=153567863]
 
@@ -13,10 +45,9 @@ position = Vector2(616, 336)
 texture = ExtResource("1_bvfni")
 
 [node name="Label" type="Label" parent="." unique_id=2146257451]
-offset_left = 584.0
-offset_top = 32.0
-offset_right = 1018.0
-offset_bottom = 193.0
+offset_left = 560.0
+offset_right = 1138.0
+offset_bottom = 325.0
 theme_override_font_sizes/font_size = 58
 text = "THE END
 
@@ -26,17 +57,24 @@ and Marie Hohmann"
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=843536699]
 script = ExtResource("2_8hmjt")
 
-[node name="PngtreeGreenSlimeBlobMonsterWithBigYellowEyesSmilingPngImage17409114Photoroom" type="Sprite2D" parent="CharacterBody2D" unique_id=2016810073]
-position = Vector2(88.00001, 456.00003)
-scale = Vector2(0.425, 0.3875)
-texture = ExtResource("2_s4tl2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1920545433]
+position = Vector2(487.99994, 112.00003)
+rotation = -0.34017593
+sprite_frames = SubResource("SpriteFrames_05cw4")
+autoplay = "default"
+frame_progress = 0.1763761
 
-[node name="Kitty" type="Sprite2D" parent="CharacterBody2D" unique_id=2110269403]
+[node name="Dounut" type="Sprite2D" parent="." unique_id=202230346]
+position = Vector2(431.99997, 480.00003)
+scale = Vector2(0.37472034, 0.37472036)
+texture = ExtResource("3_8hmjt")
+
+[node name="Kitty" type="Sprite2D" parent="." unique_id=2110269403]
 position = Vector2(264, 456)
 scale = Vector2(0.6333333, 0.56666666)
 texture = ExtResource("4_o5lv4")
 
-[node name="Dounut" type="Sprite2D" parent="CharacterBody2D" unique_id=202230346]
-position = Vector2(423.99997, 480)
-scale = Vector2(0.37472034, 0.37472036)
-texture = ExtResource("3_8hmjt")
+[node name="PngtreeGreenSlimeBlobMonsterWithBigYellowEyesSmilingPngImage17409114Photoroom" type="Sprite2D" parent="." unique_id=2016810073]
+position = Vector2(88.00001, 456.00003)
+scale = Vector2(0.425, 0.3875)
+texture = ExtResource("2_s4tl2")
