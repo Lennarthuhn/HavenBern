@@ -2,10 +2,49 @@
 
 [ext_resource type="Script" uid="uid://c3ypcg0bjulwf" path="res://scenes/character_body_3d.gd" id="1_7lbti"]
 [ext_resource type="Script" uid="uid://bravpt4xk7n5d" path="res://scenes/killzone3d.gd" id="2_7lbti"]
+[ext_resource type="Script" uid="uid://bl7ubghtk854l" path="res://scenes/node_3d.gd" id="2_jauas"]
 [ext_resource type="Material" uid="uid://dnumns5w7ucue" path="res://Image/maujoe.basic_water_material/materials/basic_water_material.material" id="2_yhftu"]
-[ext_resource type="Texture2D" uid="uid://dahyapexpqve8" path="res://Image/rainbowbk.png" id="4_yhftu"]
+[ext_resource type="Texture2D" uid="uid://4qpda0uqf8k6" path="res://Image/sky.jpg" id="3_ix6ec"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_05cw4"]
+
+[sub_resource type="Animation" id="Animation_kyai6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.6384344, 14.354056, -16.18135)]
+}
+
+[sub_resource type="Animation" id="Animation_jauas"]
+resource_name = "move"
+length = 2.0333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(6.6384344, 14.354056, -16.18135), Vector3(-0.77759933, 14.354056, -16.18135)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtr0i"]
+_data = {
+&"RESET": SubResource("Animation_kyai6"),
+&"move": SubResource("Animation_jauas")
+}
 
 [sub_resource type="Animation" id="Animation_7lbti"]
 length = 0.001
@@ -45,12 +84,12 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6saly"]
-size = Vector3(50, 1, 50)
+size = Vector3(50, 0.16357422, 50)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aj8lo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6saly"]
-panorama = ExtResource("4_yhftu")
+panorama = ExtResource("3_ix6ec")
 filter = false
 
 [sub_resource type="Sky" id="Sky_aj8lo"]
@@ -59,7 +98,7 @@ sky_material = SubResource("PanoramaSkyMaterial_6saly")
 [sub_resource type="Environment" id="Environment_05cw4"]
 background_mode = 2
 sky = SubResource("Sky_aj8lo")
-sky_rotation = Vector3(0, 2.284636, 0)
+sky_rotation = Vector3(0, 2.5132742, 0)
 
 [node name="3D" type="Node3D" unique_id=328147445]
 
@@ -68,16 +107,21 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=484040458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.144264, 0)
 script = ExtResource("1_7lbti")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1741788010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_05cw4")
 
+[node name="Node3D" type="Node3D" parent="CharacterBody3D" unique_id=413443325]
+transform = Transform3D(0.9976368, -0.056734335, -0.038757045, 0.066863716, 0.93149203, 0.35756382, 0.015815735, -0.35931027, 0.93308413, 0, 0, 0)
+script = ExtResource("2_jauas")
+
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1675325409]
-transform = Transform3D(0.9976368, -0.056734364, -0.03875701, 0.066863716, 0.931492, 0.35756382, 0.015815735, -0.35931024, 0.93308413, 1.3128958, 5.2787714, 5.9247804)
+transform = Transform3D(0.9976368, -0.056734335, -0.038757045, 0.066863716, 0.93149203, 0.3575638, 0.015815733, -0.35931024, 0.9330842, -0.19378522, 1.7878191, 4.6654205)
 current = true
-fov = 52.9
+fov = 80.06294
 near = 0.1
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="CharacterBody3D" unique_id=1725000735]
@@ -119,6 +163,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.93095, 13.080998, -21.5466
 use_collision = true
 size = Vector3(4, 1, 5)
 
+[node name="d3" type="CSGBox3D" parent="." unique_id=104777431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.850803, 13.080998, -21.546618)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="d4" type="CSGBox3D" parent="." unique_id=1386440954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.974969, 14.586293, -16.116196)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="d6" type="CSGBox3D" parent="." unique_id=1954413975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7542362, 14.586293, -22.196922)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="d5" type="CSGBox3D" parent="." unique_id=590256627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6384344, 14.354056, -16.18135)
+use_collision = true
+size = Vector3(4, 1, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="d5" unique_id=1404862393]
+libraries/ = SubResource("AnimationLibrary_rtr0i")
+autoplay = &"move"
+
 [node name="d2" type="CSGBox3D" parent="." unique_id=1186753880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.93095, -0.2153635, -21.546618)
 use_collision = true
@@ -143,7 +211,7 @@ size = Vector3(53.01111, 1, 48.62494)
 material = ExtResource("2_yhftu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bouncyground" unique_id=471528361]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 11, -16.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 10.981032, -16.5)
 shape = SubResource("BoxShape3D_6saly")
 
 [node name="killzone" type="Area3D" parent="." unique_id=1149449011]
@@ -157,5 +225,6 @@ shape = SubResource("WorldBoundaryShape3D_aj8lo")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=554679884]
 environment = SubResource("Environment_05cw4")
 
+[connection signal="area_entered" from="bouncyground" to="CharacterBody3D" method="_on_bouncyground_area_entered"]
 [connection signal="area_exited" from="bouncyground" to="CharacterBody3D" method="_on_bouncyground_area_exited"]
 [connection signal="body_entered" from="killzone" to="CharacterBody3D" method="_on_killzone_body_entered"]
